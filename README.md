@@ -1,3 +1,157 @@
+
+<img width="1799" height="951" alt="image" src="https://github.com/user-attachments/assets/e42bafea-8050-4991-9e84-111eeeb0dc37" />
+
+
+
+
+1. Visão Geral do Modelo
+
+O modelo foi construído para estimar a quantidade de estoque disponível considerando fatores temporais (data do evento), financeiros (preço) e estruturais (identificação do produto). A plataforma aplicou um processo automatizado de treinamento, validação cruzada e seleção de algoritmo (Quick Build), visando otimizar a métrica principal de Accuracy.
+
+O conjunto de dados utilizado contém:
+
+1.000 registros
+
+4 colunas
+
+Problema caracterizado como previsão categórica com múltiplas classes (3+ category prediction), indicando que a variável QUANTIDADE_ESTOQUE foi tratada como classes discretas, e não como valor contínuo.
+
+2. Métrica Principal de Desempenho
+Accuracy (Acurácia)
+
+Valor: 7,563%
+
+Significado
+
+A acurácia representa a proporção de previsões em que o modelo acertou exatamente a classe correta da variável QUANTIDADE_ESTOQUE.
+
+Como é calculada
+𝐴
+𝑐
+𝑐
+𝑢
+𝑟
+𝑎
+𝑐
+𝑦
+=
+N
+u
+ˊ
+mero de previs
+o
+˜
+es corretas
+N
+u
+ˊ
+mero total de previs
+o
+˜
+es
+×
+100
+Accuracy=
+N
+u
+ˊ
+mero total de previs
+o
+˜
+es
+N
+u
+ˊ
+mero de previs
+o
+˜
+es corretas
+	​
+
+×100
+Interpretação
+
+Um valor de 7,563% indica que o modelo apresenta baixo poder de generalização no formato atual. Em termos práticos, apenas cerca de 7 em cada 100 previsões coincidem exatamente com a classe real do estoque.
+
+Análise Técnica
+
+Esse resultado sugere:
+
+Alta dispersão da variável-alvo
+
+Classes mal balanceadas
+
+Pouca separabilidade estatística entre os padrões dos dados
+
+Possível inadequação do problema como classificação, quando o mais indicado seria regressão (valor contínuo de estoque)
+
+3. Impacto das Variáveis (Column Impact)
+
+O painel de impacto mostra a importância relativa de cada variável na formação da previsão, medida pelo quanto a alteração dessa variável afeta o resultado final do modelo.
+
+3.1 DATA_EVENTO — 48,203%
+
+É a variável mais influente do modelo.
+
+Interpretação:
+A dimensão temporal exerce forte impacto sobre a previsão de estoque, indicando padrões sazonais, picos de consumo ou variações ligadas a datas específicas (eventos, períodos promocionais ou ciclos operacionais).
+
+3.2 PRECO — 29,784%
+
+Segundo fator mais relevante.
+
+Interpretação:
+O preço afeta diretamente a dinâmica de saída ou reposição de estoque, influenciando a demanda e, consequentemente, a quantidade disponível.
+
+3.3 ID_PRODUTO — 22,013%
+
+Representa o comportamento específico de cada item.
+
+Interpretação:
+Produtos apresentam padrões próprios de consumo e reposição, o que contribui para variações no estoque, porém com menor peso que fatores temporais e financeiros.
+
+4. Análise do Gráfico de Impacto por Data
+
+O gráfico “Impact of DATA_EVENTO on prediction of QUANTIDADE_ESTOQUE” apresenta a variação do impacto da data sobre a previsão ao longo do tempo.
+
+Significado Técnico do Boxplot
+
+Cada caixa representa a distribuição do impacto da variável em um intervalo de data, mostrando:
+
+Mediana do impacto
+
+Dispersão dos valores
+
+Pontos de maior influência positiva ou negativa
+
+Interpretação
+
+Observa-se que:
+
+Algumas datas possuem impacto fortemente positivo, elevando a previsão de estoque
+
+Outras apresentam impacto próximo de zero ou negativo, indicando baixa relevância estatística naquele período
+
+Isso reforça a presença de padrões sazonais e eventos específicos que afetam diretamente a dinâmica do estoque
+
+5. Conclusão Executiva
+
+Apesar de o modelo identificar corretamente os principais fatores explicativos do estoque — especialmente a variável temporal (DATA_EVENTO) — seu desempenho preditivo é tecnicamente baixo no formato atual, conforme indicado pela acurácia de 7,563%.
+
+Isso compromete sua utilização para:
+
+Planejamento automático de reposição
+
+Geração de alertas operacionais confiáveis
+
+Tomada de decisão estratégica baseada em previsão
+
+
+
+
+
+
+
 # 📊 Previsão de Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
 
 Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com SageMaker Canvas. Neste Lab DIO, você aprenderá a usar o SageMaker Canvas para criar previsões de estoque baseadas em Machine Learning (ML). Siga os passos abaixo para completar o desafio!
