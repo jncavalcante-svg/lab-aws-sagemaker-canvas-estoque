@@ -21,55 +21,6 @@ Accuracy (Acurácia)
 
 Valor: 7,563%
 
-Significado
-
-A acurácia representa a proporção de previsões em que o modelo acertou exatamente a classe correta da variável QUANTIDADE_ESTOQUE.
-
-Como é calculada
-𝐴
-𝑐
-𝑐
-𝑢
-𝑟
-𝑎
-𝑐
-𝑦
-=
-N
-u
-ˊ
-mero de previs
-o
-˜
-es corretas
-N
-u
-ˊ
-mero total de previs
-o
-˜
-es
-×
-100
-Accuracy=
-N
-u
-ˊ
-mero total de previs
-o
-˜
-es
-N
-u
-ˊ
-mero de previs
-o
-˜
-es corretas
-	​
-
-×100
-Interpretação
 
 Um valor de 7,563% indica que o modelo apresenta baixo poder de generalização no formato atual. Em termos práticos, apenas cerca de 7 em cada 100 previsões coincidem exatamente com a classe real do estoque.
 
